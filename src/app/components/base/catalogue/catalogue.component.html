@@ -1,0 +1,45 @@
+<div class="container mt-5">
+    <div class="title-container">
+        <h2 class="text-center">Explora los productos que tenemos para tí</h2>
+        <div class="line"></div>
+    </div>
+    <div class="catalogue-container">
+        <div class="row">
+            <div class="col" *ngFor="let product of products">
+                <div class="product-card">
+                    <div class="row">
+                        <div class="col d-flex aligns-items-center">
+                            <div class="product-image">
+                                <img [src]="product['image']" draggable="false">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="product-body">
+                                <div class="float-end">
+                                    <div class="btn-add-to-list " (click)="addToWishList()">
+                                        <i class="bi bi-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="product-description">
+                                    <h4>{{ product['name'] }}</h4>
+                                    <span>Product ID: {{ product['id'] }}</span>
+                                    <p>{{ product['category'] }}</p>
+                                </div>
+                                <div class="row bottom-container">
+                                    <div class="col-sm-6">
+                                        <div class="product-price">
+                                            <h5>${{ product['unitPrice'] }}</h5>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

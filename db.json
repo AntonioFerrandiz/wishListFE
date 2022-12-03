@@ -1,0 +1,8 @@
+{
+  "products": [
+      { "id": 1000001, "name": "Cartera Attico", "category": "Bolsas", "unitPrice": 150, "image": "../../../assets/img/product001.jpg" },
+      { "id": 1000002, "name": "Zapatillas Trail Running", "category": "Calzado Hombre", "unitPrice": 351, "image": "../../../assets/img/product002.jpg" },
+      { "id": 1000003, "name": "Gafas fotocromáticas", "category": "Gafas", "unitPrice": 10, "image": "../../../assets/img/product003.jpg" }
+  ]
+
+}

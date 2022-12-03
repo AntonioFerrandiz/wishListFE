@@ -1,0 +1,44 @@
+.body{
+    background-color: #A0E4CB;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-container{
+    margin-bottom: 8rem;
+}
+
+.hero-title{
+    font-size: 2.5rem;
+    color: #3C4048;
+}
+.hero-description{
+    font-size: 1.25rem;
+    color: #3C4048;
+    
+}
+
+.btn-start{
+    border: none;
+    padding: .6rem 1.5rem;
+    border-radius: .25rem;
+    background-color: #59C1BD;
+    color: #fff;
+    font-weight: 500;
+    margin: 0 .5rem 0 0;
+}
+.btn-readmore{
+    border: none;
+    padding: .6rem 1.5rem;
+    border-radius: .25rem;
+    background-color: #CFF5E7;
+    color: #59C1BD;
+    font-weight: 500;
+}
+.wave{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

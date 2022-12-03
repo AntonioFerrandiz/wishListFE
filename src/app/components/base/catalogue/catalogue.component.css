@@ -1,0 +1,74 @@
+.line {
+    width: 10rem;
+    background-color: #A0E4CB;
+    border: 2px solid#A0E4CB;
+    margin: 0 auto;
+}
+
+.title-container h2 {
+    margin: 0 0 4px 0;
+    color: #3C4048;
+}
+
+.catalogue-container {
+    margin: 2rem 0;
+}
+
+.product-card {
+    background-color: #FFF;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 11.25rem;
+    width: 25rem;
+    position: relative;
+}
+
+.product-description h4 {
+    font-size: 1.15rem;
+    font-weight: 500;
+
+}
+
+.product-description span,
+p {
+    font-size: .75rem;
+    margin: 0;
+    bottom: 0;
+    color: #3C4048;
+    font-weight: bold;
+    line-height: 2px;
+}
+
+.product-image img {
+    object-fit: contain;
+    height: 9rem;
+    width: 100%;
+}
+
+.product-body {
+    width: 11rem;
+}
+
+.bottom-container {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: .5rem;
+}
+
+.product-price h5 {
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+.btn-add-to-list {
+    margin: 0 .75rem 0 0;
+}
+
+.bi-heart {
+    color: #E64848;
+}
+
+.btn-add-to-list:hover .bi-heart:before {
+    cursor: pointer;
+    content: "\F415";
+}

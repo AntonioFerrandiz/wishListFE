@@ -1,0 +1,23 @@
+.home-item:hover{
+    cursor: pointer;
+}
+.home-item:hover .bi-house-door:before{
+    content: "\F422";
+    color: #A0E4CB;
+}
+
+.catalogue-item:hover{
+    cursor: pointer;
+}
+.catalogue-item:hover .bi-book:before{
+    content: "\F192";
+    color: #A0E4CB;
+}
+
+.wish_list-item:hover{
+    cursor: pointer;
+}
+.wish_list-item:hover .bi-bookmark-heart:before{
+    content: "\F19A";
+    color: #A0E4CB;
+}
