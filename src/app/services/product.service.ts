@@ -11,7 +11,7 @@ export class ProductService {
   myApiUrl: string
 
   constructor(private http: HttpClient) { 
-    this.myAppUrl = environment.endpoint;
+    this.myAppUrl = 'http://localhost:3000/';
     this.myApiUrl = "products/";
   }
 
