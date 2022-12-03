@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  endpoint: 'https://wish-list-json-server.vercel.app/'
 };
