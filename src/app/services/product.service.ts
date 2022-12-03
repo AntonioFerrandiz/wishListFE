@@ -12,10 +12,18 @@ export class ProductService {
 
   constructor(private http: HttpClient) { 
     this.myAppUrl = environment.endpoint;
-    this.myApiUrl = "products/";
+    this.myApiUrl = "products";
   }
 
   getProducts(){
     return this.http.get(this.myAppUrl + this.myApiUrl)
+  }
+
+  searchProduct(id:Number){
+    return this.http.get(this.myAppUrl + this.myApiUrl + '?id=' + id)
+  }
+
+  setLocalStorage(data:any):void{
+    localStorage.setItem('product', data)
   }
 }
