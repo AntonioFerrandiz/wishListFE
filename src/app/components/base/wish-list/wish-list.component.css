@@ -37,3 +37,34 @@
     background-color: #59C1BD;
     color: #FFF;
 }
+.table{
+    margin: 2rem 0;
+}
+.table tbody th, .table tbody td{
+    vertical-align: middle;
+}
+.product-image img{
+    width: 10rem;
+}
+
+.product-info p{
+    color: #3C4048;
+    margin: 0;
+    
+}
+.product-info span{
+    color: #3C4048;
+    font-size: .75rem;
+    font-weight: 700;
+}
+.bi-trash3{
+    font-size: 1.5rem;
+}
+.icon-container{
+    width: 24px;
+}
+.icon-container:hover .bi-trash3::before{
+    cursor: pointer;
+    content: "\F78A";
+    color: #E64848;
+}

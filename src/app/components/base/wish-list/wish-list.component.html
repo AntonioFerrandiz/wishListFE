@@ -5,15 +5,51 @@
     </div>
 
     <div class="list-container">
-        <div class="wishlist-empty-container" *ngIf="products.length < 1">
+        <div class="wishlist-empty-container" *ngIf="products.length < 1; else showTable">
             <div class="wishlist-empty text-center">
                 <img draggable="false" src="../../../../assets/img/empty.png">
                 <h4>Tu Wishlist está vacia</h4>
                 <p>Dale clic a los corazones para empezar a agregar tus productos favoritos</p>
-                <button [routerLink]="['/catalogue']" routerLinkActive="router-link-active" >Agregar ahora</button>
+                <button [routerLink]="['/catalogue']" routerLinkActive="router-link-active">Agregar ahora</button>
             </div>
-
-            
         </div>
+
+        <ng-template #showTable>
+            <div class="table-wrap" >
+                <table class="table">
+                    <thead class="thead-primary">
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="alert" role="alert" *ngFor="let product of products;let i = index">
+                            <td class="product-image">
+                                <img [src]="products[i][0]['image']" draggable="false">
+                            </td>
+                            <td class="product-info">
+                                <p>{{ products[i][0]['name'] }}</p>
+                                <span>{{ products[i][0]['category'] }}</span>
+                            </td>
+                            <td class="product-price">
+                                <span><b>$ </b>{{ products[i][0]['unitPrice'] }}</span>
+                            </td>
+                            
+                            <td class="product-actions">
+                                <div class="icon-container" (click)="removeProduct(products[i][0]['id'])">
+                                    <i class="bi bi-trash3"></i>
+                                </div>
+                            </td> 
+                            
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </ng-template>
+        
     </div>
 </div>

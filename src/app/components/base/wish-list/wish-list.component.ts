@@ -26,4 +26,11 @@ export class WishListComponent implements OnInit {
       console.log(this.products);  
     }
   }
+
+  removeProduct(id:Number):void{
+    const index = this.products.map((x: { id: any; }[]) => x[0].id).indexOf(id)
+    this.products.splice(index,1) 
+    localStorage.setItem("products", JSON.stringify(this.products))
+    this.getProducts()
+  }
 }
