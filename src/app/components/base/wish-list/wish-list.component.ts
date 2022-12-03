@@ -23,7 +23,6 @@ export class WishListComponent implements OnInit {
       this.products = []
     } else {
       this.products = JSON.parse(this.products)
-      console.log(this.products);  
     }
   }
 
