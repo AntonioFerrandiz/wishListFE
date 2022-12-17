@@ -1,0 +1,8 @@
+.discord-invite{
+    color: #121212 ;
+}
+
+.discord-invite:hover {
+    cursor: pointer ; 
+    color: #59C1BD ;
+}

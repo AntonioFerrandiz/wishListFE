@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { ProductService } from 'src/app/services/product.service';
+import { WishlistService } from 'src/app/services/wishlist.service';
 import { Product } from 'src/models/product.model';
 
 
@@ -11,25 +13,37 @@ import { Product } from 'src/models/product.model';
 })
 export class WishListComponent implements OnInit {
 
-  constructor(private productsService: ProductService) { }
+  constructor(private productsService: ProductService,
+    private wishListService: WishlistService,
+    private toastr: ToastrService) { }
   products: any = []
   ngOnInit(): void {
     this.getProducts()
   }
 
   getProducts() {
-    this.products = localStorage.getItem("products");
-    if (this.products == null) {
-      this.products = []
-    } else {
-      this.products = JSON.parse(this.products)
-    }
+    // if userId is null, go to login
+    // const userId = this.loginService.getTokenDecoded()
+    const userId = 1
+    this.wishListService.getWishList(userId).subscribe(data => {
+      this.products = data
+
+    })
   }
 
-  removeProduct(id:Number):void{
-    const index = this.products.map((x: { id: any; }[]) => x[0].id).indexOf(id)
-    this.products.splice(index,1) 
-    localStorage.setItem("products", JSON.stringify(this.products))
-    this.getProducts()
+  removeProduct(id: Number): void {
+    // if userId is null, go to login
+    // const userId = this.loginService.getTokenDecoded()
+    const userId = 1
+    
+    this.wishListService.removeProductFromWishlist(id, userId).subscribe({
+      complete: () => {
+        this.toastr.success('Has borrado este producto de tu lista')
+        this.getProducts()
+      },
+      error: (e) => {
+        this.toastr.error('Ha ocurrido error en el backend', 'Error 😨')
+      }
+    })
   }
 }
