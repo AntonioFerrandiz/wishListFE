@@ -21,3 +21,12 @@
     content: "\F19A";
     color: #A0E4CB;
 }
+
+.profile-item:hover{
+    cursor: pointer;
+}
+
+.profile-item:hover .bi-person::before{
+    content: "\F4DA";
+    color: #A0E4CB;
+}
