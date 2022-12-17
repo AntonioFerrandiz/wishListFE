@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  endpoint: 'https://wish-list-json-server.vercel.app/'
+  endpoint: 'https://wish-list-json-server.vercel.app/',
+  endpointBackend: 'http://localhost:8080/'
 };
 
 /*
