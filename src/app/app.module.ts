@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/base/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './components/base/profile/profile.component';
 import { SharedModule } from 'src/shared/shared.module';
+import { ReadMoreModalComponent } from './components/home/read-more-modal/read-more-modal.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SharedModule } from 'src/shared/shared.module';
     CatalogueComponent,
     BaseComponent,
     NavbarComponent,
-    ProfileComponent
+    ProfileComponent,
+    ReadMoreModalComponent
   ],
   imports: [
     BrowserModule,
