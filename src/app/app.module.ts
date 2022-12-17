@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +10,8 @@ import { CatalogueComponent } from './components/base/catalogue/catalogue.compon
 import { BaseComponent } from './components/base/base.component';
 import { NavbarComponent } from './components/base/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './components/base/profile/profile.component';
+import { SharedModule } from 'src/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import { HttpClientModule } from '@angular/common/http';
     WishListComponent,
     CatalogueComponent,
     BaseComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
