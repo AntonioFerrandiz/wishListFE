@@ -23,7 +23,8 @@ import { ReadMoreModalComponent } from './components/home/read-more-modal/read-m
     BaseComponent,
     NavbarComponent,
     ProfileComponent,
-    ReadMoreModalComponent
+    ReadMoreModalComponent,
+    
   ],
   imports: [
     BrowserModule,

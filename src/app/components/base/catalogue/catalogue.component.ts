@@ -15,6 +15,7 @@ export class CatalogueComponent implements OnInit {
   products: any = []
   wishList: any = []
   ids: any = []
+  loading = false
   constructor(private productsService: ProductService,
               private wishListService: WishlistService,
               private toastr: ToastrService) { }
@@ -24,8 +25,10 @@ export class CatalogueComponent implements OnInit {
   }
 
   getProducts():void{
+    this.loading = true
     this.productsService.getProducts().subscribe(data => {
       this.products = data
+      this.loading = false
     })
   }
   addToWishList(productId:Number):void{

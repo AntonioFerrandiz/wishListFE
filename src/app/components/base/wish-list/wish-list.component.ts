@@ -17,6 +17,7 @@ export class WishListComponent implements OnInit {
     private wishListService: WishlistService,
     private toastr: ToastrService) { }
   products: any = []
+  loading = false
   ngOnInit(): void {
     this.getProducts()
   }
@@ -25,9 +26,10 @@ export class WishListComponent implements OnInit {
     // if userId is null, go to login
     // const userId = this.loginService.getTokenDecoded()
     const userId = 1
+    this.loading = true
     this.wishListService.getWishList(userId).subscribe(data => {
+      this.loading = false
       this.products = data
-
     })
   }
 

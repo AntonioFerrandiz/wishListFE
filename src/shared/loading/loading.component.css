@@ -1,0 +1,9 @@
+.loading-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 25vh;
+}
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #59C1BD!important;
+}

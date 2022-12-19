@@ -24,11 +24,14 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
+    LoadingComponent
   ],
   imports: [
     CommonModule,
@@ -38,6 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ToastrModule.forRoot(),
     MatAutocompleteModule,MatButtonModule, MatCardModule, MatDividerModule, MatProgressSpinnerModule, MatInputModule, MatListModule, MatFormFieldModule, MatIconModule, MatRadioModule, MatTableModule, MatSidenavModule, MatToolbarModule, MatTabsModule, MatDialogModule, MatSelectModule, MatMenuModule, MatSortModule, MatChipsModule, MatDatepickerModule,MatNativeDateModule
   ], exports: [
+    LoadingComponent,
     ReactiveFormsModule,
     FormsModule,
     MatAutocompleteModule,MatButtonModule, MatCardModule, MatDividerModule, MatProgressSpinnerModule, MatInputModule, MatListModule, MatFormFieldModule, MatIconModule, MatRadioModule, MatTableModule, MatSidenavModule, MatToolbarModule, MatTabsModule, MatDialogModule, MatSelectModule, MatMenuModule, MatSortModule, MatChipsModule, MatDatepickerModule, MatNativeDateModule
