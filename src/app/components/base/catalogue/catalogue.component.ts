@@ -23,7 +23,32 @@ export class CatalogueComponent implements OnInit {
   ngOnInit(): void {
     this.getProducts()
   }
+  fetchProducts():void{
+    
+    for (let i = 10; i < 15; i++) {
+      this.productsService.fetchProducts(i).subscribe(data => {
+        const product: Product = {
+          id: 0,
+          name: data['title'],
+          category: data['category'][0].toUpperCase() + data['category'].substring(1),
+          unitPrice: Math.round(data['price']),
+          image: data['image']
+        }
+        this.productsService.addProducts(product).subscribe({
+          complete: () => {
+            console.log(`Producto ${i} subido`)
+          },
+          error: (e) => {
+            console.log(e)
+          }
 
+        })
+        
+      })
+      
+    }
+
+  }
   getProducts():void{
     this.loading = true
     this.productsService.getProducts().subscribe(data => {

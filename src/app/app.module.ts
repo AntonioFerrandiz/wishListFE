@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './components/base/profile/profile.component';
 import { SharedModule } from 'src/shared/shared.module';
 import { ReadMoreModalComponent } from './components/home/read-more-modal/read-more-modal.component';
+import { ExploreComponent } from './components/base/explore/explore.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ReadMoreModalComponent } from './components/home/read-more-modal/read-m
     NavbarComponent,
     ProfileComponent,
     ReadMoreModalComponent,
+    ExploreComponent,
     
   ],
   imports: [

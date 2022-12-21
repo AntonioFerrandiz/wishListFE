@@ -5,12 +5,14 @@ import { HomeComponent } from './components/home/home.component';
 import { WishListComponent } from './components/base/wish-list/wish-list.component';
 import { BaseComponent } from './components/base/base.component';
 import { ProfileComponent } from './components/base/profile/profile.component';
+import { ExploreComponent } from './components/base/explore/explore.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: '', component: BaseComponent, children: [
     { path: 'catalogue', component: CatalogueComponent},
-    { path: 'wishList', component: WishListComponent},
+    { path: 'explore', component: ExploreComponent},
+    { path: 'wishList/:username', component: WishListComponent},
     { path: 'profile', component: ProfileComponent}
   ]},
   

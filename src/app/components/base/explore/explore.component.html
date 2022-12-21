@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <div class="title-container">
+        <h2 class="text-center">Explora la lista de los demás</h2>
+        <div class="line"></div>
+    </div>
+    <div class="explore-container">
+        <div class="row">
+            <div class="col-sm-2 d-flex justify-content-center" *ngFor="let wishList of wishLists; let i = index;">
+                <div class="wl-card text-center" routerLink="../wishList/{{ wishList.username }}" routerLinkActive="router-link-active" >
+                    <div class="wl-user-pp ">
+                         <img src="{{ wishList['profile_picture'] }}">
+                    </div>
+                    <div class="wl-item-body">
+                        <p>{{ wishList['username'] }}</p>
+                        <span>{{ wishList['count'] }} wishes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

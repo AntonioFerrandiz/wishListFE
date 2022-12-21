@@ -1,0 +1,50 @@
+.line {
+    width: 8rem;
+    background-color: #A0E4CB;
+    border: 2px solid#A0E4CB;
+    margin: 0 auto;
+}
+
+.title-container h2 {
+    margin: 0 0 4px 0;
+    color: #3C4048;
+}
+.explore-container{
+    margin: 2rem 0 0 0;
+}
+
+.wl-card{
+    width: 10rem;
+    cursor: pointer;
+ 
+    padding: .25rem 0 .25rem 0;
+}
+.wl-card:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.wl-item-body p{
+    margin: 0;
+    font-weight: 500;
+}
+.wl-item-body span{
+    font-weight: 300;
+}
+.wl-user-pp{
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    position: relative;
+    background-color: #F2F2F2;
+    margin: auto;
+}
+.wl-user-pp::after{
+    content: "";
+    display: block;
+}
+.wl-user-pp img{
+    object-fit: cover;
+    height: 9rem;
+    width: 9rem;
+    border-radius: 50%;
+    
+}
