@@ -13,7 +13,7 @@ export class WishlistService {
 
   constructor(private http: HttpClient) { 
     this.myAppUrl = environment.endpointBackend;
-    this.myApiUrl = "wishList/";
+    this.myApiUrl = "wishList";
   }
 
   addProduct(wishList: WishList){
@@ -21,13 +21,13 @@ export class WishlistService {
   }
 
   getWishList(userId: Number){
-    return this.http.get(this.myAppUrl + this.myApiUrl + `byUser/${userId}`)
+    return this.http.get(this.myAppUrl + this.myApiUrl + `/byUser/${userId}`)
   }
 
   getAllWishLists(){
     return this.http.get(this.myAppUrl + this.myApiUrl)
   }
   removeProductFromWishlist(wishListId: Number, userId:Number){
-    return this.http.delete(this.myAppUrl + this.myApiUrl + `delete/${wishListId}/${userId}`)
+    return this.http.delete(this.myAppUrl + this.myApiUrl + `/delete/${wishListId}/${userId}`)
   }
 }
