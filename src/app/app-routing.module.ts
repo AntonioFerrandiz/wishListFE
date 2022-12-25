@@ -6,14 +6,17 @@ import { WishListComponent } from './components/base/wish-list/wish-list.compone
 import { BaseComponent } from './components/base/base.component';
 import { ProfileComponent } from './components/base/profile/profile.component';
 import { ExploreComponent } from './components/base/explore/explore.component';
+import { LoginComponent } from './components/home/login/login.component';
+import { AuthGuard } from 'src/helper/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent},
   { path: '', component: BaseComponent, children: [
     { path: 'catalogue', component: CatalogueComponent},
     { path: 'explore', component: ExploreComponent},
     { path: 'wishList/:username', component: WishListComponent},
-    { path: 'profile', component: ProfileComponent}
+    { path: 'profile', canActivate: [AuthGuard] ,component: ProfileComponent}
   ]},
   
 ];

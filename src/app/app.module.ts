@@ -9,11 +9,13 @@ import { WishListComponent } from './components/base/wish-list/wish-list.compone
 import { CatalogueComponent } from './components/base/catalogue/catalogue.component';
 import { BaseComponent } from './components/base/base.component';
 import { NavbarComponent } from './components/base/navbar/navbar.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProfileComponent } from './components/base/profile/profile.component';
 import { SharedModule } from 'src/shared/shared.module';
 import { ReadMoreModalComponent } from './components/home/read-more-modal/read-more-modal.component';
 import { ExploreComponent } from './components/base/explore/explore.component';
+import { AddTokenInterceptor } from 'src/helper/add-token.interceptor';
+import { LoginComponent } from './components/home/login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { ExploreComponent } from './components/base/explore/explore.component';
     ProfileComponent,
     ReadMoreModalComponent,
     ExploreComponent,
-    
+    LoginComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,13 @@ import { ExploreComponent } from './components/base/explore/explore.component';
     SharedModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AddTokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
