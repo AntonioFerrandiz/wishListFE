@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { LoginService } from 'src/app/services/login.service';
 import { ProductService } from 'src/app/services/product.service';
 import { WishlistService } from 'src/app/services/wishlist.service';
 import { Product } from 'src/models/product.model';
@@ -17,65 +19,46 @@ export class CatalogueComponent implements OnInit {
   ids: any = []
   loading = false
   constructor(private productsService: ProductService,
-              private wishListService: WishlistService,
-              private toastr: ToastrService) { }
+    private wishListService: WishlistService,
+    private router: Router,
+    private loginService: LoginService,
+    
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getProducts()
   }
-  fetchProducts():void{
-    
-    for (let i = 10; i < 15; i++) {
-      this.productsService.fetchProducts(i).subscribe(data => {
-        const product: Product = {
-          id: 0,
-          name: data['title'],
-          category: data['category'][0].toUpperCase() + data['category'].substring(1),
-          unitPrice: Math.round(data['price']),
-          image: data['image']
-        }
-        this.productsService.addProducts(product).subscribe({
-          complete: () => {
-            console.log(`Producto ${i} subido`)
-          },
-          error: (e) => {
-            console.log(e)
-          }
 
-        })
-        
-      })
-      
-    }
-
-  }
-  getProducts():void{
+  getProducts(): void {
     this.loading = true
     this.productsService.getProducts().subscribe(data => {
       this.products = data
       this.loading = false
     })
   }
-  addToWishList(productId:Number):void{
-    // if userId is null, go to login
-    // const userId = this.loginService.getTokenDecoded()
-    const userId = 1
-    const wishList: WishList = {
-      productId: productId,
-      userId: userId
-    }
-    this.wishListService.addProduct(wishList).subscribe({
-      complete: () => {
-        this.toastr.success('Has agregado este producto en tu lista')
-      },
-      error: (e) => {
-        if(e.status == 404){
-          this.toastr.error('Ya tienes este producto en tu lista', 'Error')
-        }else{
-          this.toastr.error('Ha ocurrido error en el backend', 'Error 😨')
-        }
-        
+  addToWishList(productId: Number): void {
+    if (this.loginService.getToken() == null) {
+      this.router.navigate(['/login'])
+    } else {
+      const userId = this.loginService.getTokenDecoded()
+      const wishList: WishList = {
+        productId: productId,
+        userId: userId
       }
-    })  
+      this.wishListService.addProduct(wishList).subscribe({
+        complete: () => {
+          this.toastr.success('Has agregado este producto en tu lista')
+        },
+        error: (e) => {
+          if (e.status == 404) {
+            this.toastr.error('Ya tienes este producto en tu lista', 'Error')
+          } else {
+            this.toastr.error('Ha ocurrido error en el backend', 'Error 😨')
+          }
+
+        }
+      })
+    }
+
   }
 }

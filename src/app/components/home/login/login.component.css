@@ -1,0 +1,13 @@
+.body{
+    background-color: #A0E4CB;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wave{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { LoginService } from 'src/app/services/login.service';
 import { ProductService } from 'src/app/services/product.service';
 import { UserService } from 'src/app/services/user.service';
 import { WishlistService } from 'src/app/services/wishlist.service';
@@ -22,6 +23,7 @@ export class WishListComponent implements OnInit {
   constructor(private productsService: ProductService,
     private wishListService: WishlistService,
     private userSerivce: UserService,
+    private loginService: LoginService,
     private toastr: ToastrService,
     private aRoute: ActivatedRoute) {
     this.username = this.aRoute.snapshot.paramMap.get("username")
@@ -32,8 +34,8 @@ export class WishListComponent implements OnInit {
     this.getLoggedUserId()
   }
 
-  getLoggedUserId(){
-    this.userLoggedId = 1
+  getLoggedUserId() {
+    this.loginService.getToken() == null ? this.userLoggedId = 0 : this.userLoggedId = this.loginService.getTokenDecoded()
   }
 
   getProducts() {
@@ -45,23 +47,17 @@ export class WishListComponent implements OnInit {
         this.products = data
       })
     })
-
-
-
   }
 
   removeProduct(id: Number): void {
-    // if userId is null, go to login
-    // const userId = this.loginService.getTokenDecoded()
-    const userId = 1
-
+    const userId = this.loginService.getTokenDecoded()
     this.wishListService.removeProductFromWishlist(id, userId).subscribe({
       complete: () => {
         this.toastr.success('Has borrado este producto de tu lista')
         this.getProducts()
       },
       error: (e) => {
-        this.toastr.error('Ha ocurrido error en el backend', 'Error 😨')        
+        this.toastr.error('Ha ocurrido error en el backend', 'Error 😨')
       }
     })
   }
