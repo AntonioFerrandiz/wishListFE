@@ -1,1 +1,57 @@
-<p>register works!</p>
+<div class="body">
+    <div class="container">
+        <div class="row register-container">
+            <div class="col  d-flex justify-content-center">
+                <img src="../../../../assets/img/login.webp" alt="Login Image">
+            </div>
+            <div class="col-sm-6 my-auto d-flex justify-content-center">
+                <div class="register-card">
+                    <form action="" autocomplete="off" class="register-form" [formGroup]="register" #formDirective="ngForm" (ngSubmit)="userRegister(formDirective)">
+                        <div class="register-title">
+                            <h3>Registrate en WishList</h3>
+                            <span>Ya tienes cuenta? Inicia sesión <a [routerLink]="['/login']" routerLinkActive="router-link-active" >aquí</a></span>
+                        </div>
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Username</mat-label>
+                            <input matInput type="text" formControlName="username">
+                            <mat-error *ngIf="register.get('username').hasError('required') && register.get('username').touched">
+                                Ingresa tu username
+                            </mat-error>
+                            <i matSuffix class="bi bi-person register-icon"></i>
+                        </mat-form-field>
+        
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Password</mat-label>
+                            <input matInput type="password" formControlName="password">
+                            <mat-error *ngIf="register.get('password').hasError('required') && register.get('password').touched">
+                                Ingresa tu contraseña
+                            </mat-error>
+                            <i matSuffix class="bi bi-lock register-icon"></i>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Profile Picture</mat-label>
+                            <input matInput type="text" formControlName="profilePicture">
+                            <mat-error *ngIf="register.get('profilePicture').hasError('pattern') && register.get('profilePicture').touched">
+                                Enlace incorrecto
+                            </mat-error>
+                            <mat-hint>Ingresa el link a una imagen (Opcional)</mat-hint>
+                            <i matSuffix class="bi bi-image register-icon"></i>
+                        </mat-form-field>
+
+                        <button class="btn-register mt-3" type="submit" [disabled]="register.invalid">Registrarte</button>
+                    </form>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+    <!-- <div class="wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#fff" fill-opacity="1"
+                d="M0,192L40,192C80,192,160,192,240,202.7C320,213,400,235,480,218.7C560,203,640,149,720,144C800,139,880,181,960,202.7C1040,224,1120,224,1200,218.7C1280,213,1360,203,1400,197.3L1440,192L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+            </path>
+        </svg>
+    </div> -->
+</div>

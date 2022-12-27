@@ -1,0 +1,67 @@
+.body{
+    background-color: #A0E4CB;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+::ng-deep .mat-focused .mat-form-field-label {
+  color: #59C1BD!important;
+ }
+
+::ng-deep.mat-form-field-ripple {
+ background-color: #59C1BD !important;
+}
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: #fff;
+}
+.register-title{
+    margin: 0 0 1rem 0;
+    color: #3C4048;
+}
+.register-title h3{
+    margin: 0;
+}
+.register-title a{
+    font-weight: 500;
+    color: #59C1BD;
+    text-decoration: none;
+}
+.register-container{
+    margin: 0 0 8rem 0;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.register-card{
+    width: 25rem;
+}
+.register-form{
+    padding: 1rem 1rem;
+}
+.register-icon{
+    font-size: 1.25rem;
+    color:#666666
+}
+
+.btn-register{
+    border: none;
+    width: 100%;
+    padding: .75rem .5rem;
+    
+    border-radius: .75rem;
+    background-color: #59C1BD;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+
+.wave{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
