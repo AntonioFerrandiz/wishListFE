@@ -13,7 +13,7 @@ export class LoginService {
   myApiUrl: string
 
   constructor(private http: HttpClient) { 
-    this.myAppUrl = environment.endpoint;
+    this.myAppUrl = environment.endpointBackend;
     this.myApiUrl = "auth/";
   }
 
@@ -28,7 +28,6 @@ export class LoginService {
   getTokenDecoded(): any{
     const helper = new JwtHelperService();
     const decodedToken = helper.decodeToken(localStorage.getItem('token'));
-    
     return decodedToken.sub
   }
 

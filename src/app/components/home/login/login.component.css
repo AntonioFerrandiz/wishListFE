@@ -6,6 +6,59 @@
     justify-content: center;
 }
 
+
+::ng-deep .mat-focused .mat-form-field-label {
+  color: #59C1BD!important;
+ }
+
+::ng-deep.mat-form-field-ripple {
+ background-color: #59C1BD !important;
+}
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: #fff;
+}
+.login-title{
+    margin: 0 0 1rem 0;
+    color: #3C4048;
+}
+.login-title h3{
+    margin: 0;
+}
+.login-title a{
+    font-weight: 500;
+    color: #59C1BD;
+    text-decoration: none;
+}
+.login-container{
+    margin: 0 0 8rem 0;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.login-card{
+    width: 25rem;
+}
+.login-form{
+    padding: 1rem 1rem;
+}
+.login-icon{
+    font-size: 1.25rem;
+}
+
+.btn-login{
+    border: none;
+    width: 100%;
+    padding: .75rem .5rem;
+    
+    border-radius: .75rem;
+    background-color: #59C1BD;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+
 .wave{
     position: fixed;
     bottom: 0;

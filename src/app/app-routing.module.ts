@@ -8,10 +8,12 @@ import { ProfileComponent } from './components/base/profile/profile.component';
 import { ExploreComponent } from './components/base/explore/explore.component';
 import { LoginComponent } from './components/home/login/login.component';
 import { AuthGuard } from 'src/helper/auth.guard';
+import { RegisterComponent } from './components/home/register/register.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent},
   { path: '', component: BaseComponent, children: [
     { path: 'catalogue', component: CatalogueComponent},
     { path: 'explore', component: ExploreComponent},

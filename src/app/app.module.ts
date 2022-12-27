@@ -16,6 +16,7 @@ import { ReadMoreModalComponent } from './components/home/read-more-modal/read-m
 import { ExploreComponent } from './components/base/explore/explore.component';
 import { AddTokenInterceptor } from 'src/helper/add-token.interceptor';
 import { LoginComponent } from './components/home/login/login.component';
+import { RegisterComponent } from './components/home/register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LoginComponent } from './components/home/login/login.component';
     ReadMoreModalComponent,
     ExploreComponent,
     LoginComponent,
+    RegisterComponent,
 
   ],
   imports: [
