@@ -13,9 +13,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.verifyLogin()
   }
-  verifyLogin():void{
-    console.log('waza');
-    
+  verifyLogin():void{    
     if (this.loginService.getToken() == null) {
       this.showProfile = false
     } else{
