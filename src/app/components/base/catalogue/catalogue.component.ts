@@ -38,6 +38,7 @@ export class CatalogueComponent implements OnInit {
   }
   addToWishList(productId: Number): void {
     if (this.loginService.getToken() == null) {
+      this.toastr.warning('Inicia sesión para guardar productos en tu lista de deseos', '')
       this.router.navigate(['/login'])
     } else {
       const userId = this.loginService.getTokenDecoded()
