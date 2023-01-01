@@ -38,3 +38,9 @@
     content: "\F4DA";
     color: #A0E4CB;
 }
+.login-item:hover{
+    cursor: pointer;
+}
+.login-item:hover .bi-box-arrow-in-right:before{
+    color: #A0E4CB;
+}

@@ -11,15 +11,14 @@
           <li class="breadcrumb-item search-item" [routerLink]="['/explore']" routerLinkActive="router-link-active" >
             <span><i class="bi bi-search-heart"></i> Explorar</span>
           </li>
-          <!-- <li class="breadcrumb-item wish_list-item" [routerLink]="['/wishList']" routerLinkActive="router-link-active" >
-            <span><i class="bi bi-bookmark-heart"></i> Mi WishList</span>
-          </li> -->
-          <li class="breadcrumb-item profile-item" [routerLink]="['/profile']" routerLinkActive="router-link-active" >
+          <li class="breadcrumb-item profile-item" [routerLink]="['/profile']" routerLinkActive="router-link-active" 
+            *ngIf="showProfile">
             <span><i class="bi bi-person"></i> Perfil</span>
           </li>
-          <!-- <li class="breadcrumb-item wish_list-item" [routerLink]="['/login']" routerLinkActive="router-link-active" >
-            <span><i class="bi bi-bookmark-heart"></i> Log In</span>
-          </li> -->
+          <li class="breadcrumb-item login-item" [routerLink]="['/login']" routerLinkActive="router-link-active" 
+            *ngIf="!showProfile">
+            <span><i class="bi bi-box-arrow-in-right "></i> Log In</span>
+          </li>
         </ol>
       </nav>
     </div>
